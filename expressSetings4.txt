@@ -1,0 +1,26 @@
+Configuraciones de Express
+puerto, motor de plantillas, nombre aplicacion
+siempre viene encima de middlewares
+
+// Settings
+app.set('appName', 'Express Fundamentals'); // asignamos nombre a la aplicacion
+
+luego lo mostramos por consola 
+app.listen(5000, () => {
+    console.log(app.get('appName')); // mostramos el nombre de nuestra app por consola
+    console.log('Server on port 5000');
+});
+
+creando un puerto
+// Settings
+app.set('appName', 'Express Fundamentals'); 
+app.set('port', 3000); 
+
+iniciando el puerto
+app.listen(app.get('port'), () => {
+    console.log(app.get('appName')); // mostramos el nombre de nuestra app por consola
+    console.log('Server on port', + app.get('port'));
+});
+
+la ventaja de esta configuracion es que permite realizar cambios
+a toda la aplicacion modificando solo los Settings

@@ -1,0 +1,77 @@
+Este middleware sirve para los archivos estaticos 
+viene dentro de express y lo usamos al final del codigo
+
+app.use(express.static('public'));
+
+creamos una carpeta public en el directorio de nuestro
+proyecto
+
+creamos un archivo dentro de public/index.html
+en index tenemos codigo html5
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Express</title>
+</head>
+<body>
+    <h1>Express App</h1>
+</body>
+</html>
+
+ingresamos a localhost:5000 y tendremos el html en pantalla
+tambien podemos enlazar archivos CSS, creamos una carpeta
+css/main.css
+
+body {
+    background: gray;
+    color: white;
+}
+
+luego dentro del html agregamos luego del titulo la siguiente linea
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Express</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+vamos a la aplicacion refrescamos y veremos los cabios
+automaticamente, tambien para javaScript creamos una carpeta
+js/app.js y agremamos el siguiente codigo
+
+<body>
+    <h1 id="title">Express App</h1>
+</body>
+
+ahora dentro de app.js tenemos el siguiente codigo
+
+document.getElementById('title')
+    .innerHTML = 'Javascript & Express'
+
+abrimos el html y debajo del h1 usamos el siguiente codigo
+
+    <script src="/js/app.js"></script>
+
+abrimos la aplicacion refrescamos y veremos automaticamente
+el cambio, tambien podemos hacer un timeout
+con el siguiente codigo
+
+setTimeout(() =>{
+    document.getElementById('title')
+    .innerHTML = 'Javascript & Express'
+}, 3000);
+
+abrimos la aplicacion nos muestra el h1 y pasados 3 segundos cambie
+el texto por medio de JavaScript
+
+
+
+
+
+

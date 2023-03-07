@@ -1,0 +1,26 @@
+Instalaremos nodemon para evitar parar la aplicacion y volver a ejecutar
+cada vez que realicemos un cambio en nuestro codigo
+
+para instalar usamos el siguiente codigo
+npm i nodemon -D
+
+una vez instalado ejecutamos 
+npx nodemon index.js
+
+con esto nodemon detecta cualquier cambio y
+reinicia mi servidor
+
+middleware morgan 
+
+npm i morgan
+
+sirve para mostrar las peticiones que hace el usuario
+desde la consola
+
+GET / 404 1.473 ms - 139
+GET / 404 0.320 ms - 139
+GET /user 200 1.982 ms - 47
+{ username: 'Anderson', lastname: 'Montenegro' }
+{ id: '345' }
+POST /user/345 200 3.270 ms - 21
+

@@ -1,0 +1,55 @@
+Motor de plantillas para extender el html
+consultar una base de datos y mostrar esos datos
+
+npm install ejs
+
+luego en setting agregamos una linea
+// Settings
+app.set('appName', 'Express Fundamentals'); // asignamos nombre a la aplicacion
+app.set('port', 3000); // asignamos un puerto
+app.set('view engine', 'ejs');
+
+creamos una carpeta llamada views/index.ejs
+con una estructura html5
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS Template</title>
+</head>
+<body>
+    <h1>EJS</h1>
+</body>
+</html>
+
+luego creamos una ruta 
+// Routes
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+})
+
+abrimos el navegador http://localhost:3000
+y tendremos renderizado nuestro index.ejs
+
+ahora enviados un objeto para representar mi base de datos
+// Routes
+app.get('/', (req, res) => {
+    const data = [{name: 'john'}, {name: 'joe'}, {name: 'cameron'}]; 
+    res.render('index.ejs', {people: data});
+})
+
+el cual tiene asignado 3 nombres de personas, luego abrimos
+index.ejs y añadimos la siguiente linea para que pinte en pantalla
+<body>
+    <h1>EJS</h1>
+
+    <ul>
+        <% people.forEach(funtion (person) { %>
+            <li><%= person.name %></li>
+        <% }) %>
+    </ul>
+</body>
+
+el motor de plantillas al final marca un error
